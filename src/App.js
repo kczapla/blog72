@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 const App = () => <PostsList posts={[]}/>
 
-const PostsList = ({ posts }) => {
+export const PostsList = ({ posts }) => {
   const listItems = posts.map(post => <li key={post.id}><PostsListElement post={post}/></li>)
   return <ul style={{ listStyleType: 'none' }}>{listItems}</ul>
 }
 
-const PostsListElement = ({ post: { title, created, content } }) => {
+export const PostsListElement = ({ post: { title, created, content } }) => {
   return (
     <div>
       <h2>{title}</h2>
@@ -37,4 +37,4 @@ PostsListElement.propTypes = {
   })
 }
 
-export default App
+// export default App
