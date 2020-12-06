@@ -22,13 +22,24 @@ PostPreviewTitle.propTypes = {
 }
 
 export const PostPreviewDate = ({ date }) => {
-    <div className='post-preview-date'>{date}</div>
+  return (
+    <span className='post-preview-date'>{date}</span>
+  )
 }
 
 PostPreviewDate.propTypes = {
   date: PropTypes.string
 }
 
-export const PostPreviewTag = ({ tagName }) => {
-    <div className='post-preview-tag'>{tagName}</div>
+export const PostPreviewTag = ({ name, href }) => {
+  return (
+    <div className='post-preview-tag'>
+      <a href={href}>{name}</a>
+    </div>
+  )
+}
+
+PostPreviewTag.propTypes = {
+  name: PropTypes.string,
+  href: PropTypes.string
 }
