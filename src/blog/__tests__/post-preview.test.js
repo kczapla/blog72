@@ -3,7 +3,7 @@ import React from 'react'
 import { mount, configure, shallow } from 'enzyme'
 import ReactSeventeenAdapter from '@wojtekmaj/enzyme-adapter-react-17'
 
-import { PostPreviewTitle, PostPreviewTag, PostPreviewDate, PostPreviewTags } from '../post'
+import { PostPreviewTitle, PostPreviewTag, PostPreviewDate, PostPreviewTags, PostPreviewDescription } from '../post'
 
 configure({ adapter: new ReactSeventeenAdapter() })
 
@@ -56,5 +56,22 @@ describe('post preview tags', () => {
   test('has two tags entries', () => {
     const wrapper = getPostPreviewTags()
     expect(wrapper.find(PostPreviewTag)).toHaveLength(2)
+  })
+})
+
+describe('post preview description', () => {
+  test('ends with three dots after chars threshold', () => {
+    const wrapper = mount(<PostPreviewDescription text={'this is test string'} charLimit={4}/>)
+    expect(wrapper.text()).toEqual('this...')
+  })
+
+  test('does not ends with dots when text length is below char threshold', () => {
+    const wrapper = mount(<PostPreviewDescription text={'this is'} charLimit={7}/>)
+    expect(wrapper.text()).toEqual('this is')
+  })
+
+  test('has class name post-preview-description', () => {
+    const wrapper = mount(<PostPreviewDescription text={'this is'} charLimit={7}/>)
+    expect(wrapper.childAt(0).hasClass('post-preview-description')).toBeTruthy()
   })
 })
