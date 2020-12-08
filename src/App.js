@@ -1,40 +1,35 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-const App = () => <PostsList posts={[]}/>
+import PostPreviewHeader from './blog'
 
-export const PostsList = ({ posts }) => {
-  const listItems = posts.map(post => <li key={post.id}><PostsListElement post={post}/></li>)
-  return <ul style={{ listStyleType: 'none' }}>{listItems}</ul>
-}
+const data = [
+  {
+    created: '2020-10-10',
+    user: {
+      name: 'john',
+      image: 'image',
+      userLink: 'https://google.com'
+    },
+    tags: [
+      {
+        id: 0,
+        name: 'tag1',
+        href: 'https://google.com'
+      },
+      {
+        id: 1,
+        name: 'tag2',
+        href: 'https://google.com'
+      },
+      {
+        id: 2,
+        name: 'tag3',
+        href: 'https://google.com'
+      }
+    ]
+  }
+]
 
-export const PostsListElement = ({ post: { title, created, content } }) => {
-  return (
-    <div>
-      <h2>{title}</h2>
-      <time>{created}</time>
-      <p>{content.substring(0, 50) + '...'}</p>
-    </div>
-  )
-}
+const App = () => <PostPreviewHeader post={data[0]}/>
 
-PostsList.propTypes = {
-  posts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      title: PropTypes.string,
-      content: PropTypes.string,
-      created: PropTypes.string
-    })
-  )
-}
-
-PostsListElement.propTypes = {
-  post: PropTypes.shape({
-    title: PropTypes.string,
-    created: PropTypes.string,
-    content: PropTypes.string
-  })
-}
-
-// export default App
+export default App
