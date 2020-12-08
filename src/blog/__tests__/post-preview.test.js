@@ -3,7 +3,7 @@ import React from 'react'
 import { mount, configure, shallow } from 'enzyme'
 import ReactSeventeenAdapter from '@wojtekmaj/enzyme-adapter-react-17'
 
-import { PostPreviewTitle, PostPreviewTag, PostPreviewDate, PostPreviewTags, PostPreviewDescription } from '../post'
+import { PostPreviewTitle, PostPreviewTag, PostPreviewDate, PostPreviewTags, PostPreviewDescription } from '../post-preview'
 
 configure({ adapter: new ReactSeventeenAdapter() })
 
