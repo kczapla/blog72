@@ -1,13 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as author from './author'
-import * as post from './post-preview'
+import * as post from './postPreview'
 
 const PostPreviewHeader = ({ post: { user: { name, image, userLink }, tags, created } }) => {
   return (
     <div className="post-preview-header">
-        <author.PostPreviewAuthor name={name} image={image} userLink={userLink}/>
+        <post.PostPreviewAuthor name={name} image={image} userLink={userLink}/>
         <post.PostPreviewTags tags={tags}/>
         <post.PostPreviewDate date={created}/>
     </div>
