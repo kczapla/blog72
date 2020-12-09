@@ -1,13 +1,46 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+const AuthorLink = styled.a`
+  style: hoover;
+`
+
+const AuthorPreviewProfilePicture = styled.img`
+  height: 15px;
+  width: 15px;
+  alt: "Post Author's profile picture"
+`
+
+const AuthorPreviewName = styled.text`
+  font-size: 15px;
+  color: black;
+`
+
+const AuthorPreview = styled.span`
+  a:link {
+    text-decoration: none;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  a:active {
+    text-decoration: underline;
+  }
+`
 
 export const PostPreviewAuthor = ({ name, image, userLink }) => (
-  <div className='post-preview-author'>
-      <a href={userLink}>
-          <img src={image}></img>
-      </a>
-      <a href={userLink}>{name}</a>
-  </div>
+  <AuthorPreview>
+    <AuthorLink href={userLink}>
+      <AuthorPreviewName>
+        <AuthorPreviewProfilePicture src={image}></AuthorPreviewProfilePicture>
+        {name}
+      </AuthorPreviewName>
+    </AuthorLink>
+  </AuthorPreview>
 )
 
 PostPreviewAuthor.propTypes = {
