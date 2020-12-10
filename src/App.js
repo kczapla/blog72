@@ -7,7 +7,7 @@ const data = [
     created: '2020-10-10',
     user: {
       name: 'john',
-      image: 'image',
+      image: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
       userLink: 'https://google.com'
     },
     tags: [

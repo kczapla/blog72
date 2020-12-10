@@ -7,9 +7,11 @@ const AuthorLink = styled.a`
 `
 
 const AuthorPreviewProfilePicture = styled.img`
-  height: 15px;
-  width: 15px;
-  alt: "Post Author's profile picture"
+  height: 25px;
+  width: 25px;
+  padding: 10px;
+  alt: "Post Author's profile picture";
+  vertical-align: middle;
 `
 
 const AuthorPreviewName = styled.text`
