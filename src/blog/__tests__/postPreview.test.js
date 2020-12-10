@@ -18,7 +18,6 @@ describe('post preview author', () => {
   })
 })
 
-
 describe('post preview title', () => {
   test('has heading', () => {
     const wrapper = mount(<PostPreviewTitle title={'test'}></PostPreviewTitle>)
