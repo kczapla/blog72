@@ -14,11 +14,6 @@ const AuthorPreviewProfilePicture = styled.img`
   vertical-align: middle;
 `
 
-const AuthorPreviewName = styled.text`
-  font-size: 15px;
-  color: black;
-`
-
 const AuthorPreview = styled.span`
   a:link {
     text-decoration: none;
@@ -32,15 +27,16 @@ const AuthorPreview = styled.span`
   a:active {
     text-decoration: underline;
   }
+
+  font-size: 15px;
+  color: black;
 `
 
 export const PostPreviewAuthor = ({ name, image, userLink }) => (
   <AuthorPreview>
     <AuthorLink href={userLink}>
-      <AuthorPreviewName>
-        <AuthorPreviewProfilePicture src={image}></AuthorPreviewProfilePicture>
-        {name}
-      </AuthorPreviewName>
+      <AuthorPreviewProfilePicture src={image}></AuthorPreviewProfilePicture>
+      {name}
     </AuthorLink>
   </AuthorPreview>
 )
