@@ -47,3 +47,34 @@ Tag.propTypes = {
     href: PropTypes.string
   })
 }
+
+const TagInlineListItem = styled.li`
+  display: inline;
+  margin: 2px;
+`
+
+const TagList = styled.ul`
+  list-style-type: none;
+`
+
+export const Tags = ({ tags }) => {
+  const tagsInList = tags.map(tag => (
+    <TagInlineListItem key={tag.id}>
+      <Tag tag={tag}></Tag>
+    </TagInlineListItem>
+  ))
+
+  return (
+    <TagList>
+      {tagsInList}
+    </TagList>
+  )
+}
+
+Tags.propTypes = {
+  tags: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    href: PropTypes.string
+  }))
+}
