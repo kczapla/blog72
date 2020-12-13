@@ -1,21 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import * as post from './postPreview'
-import * as tag from './tag'
-import * as utils from './utils'
+import * as postHeader from './postHeader'
 
-const PostPreviewHeader = ({ post: { user: { name, image, userLink }, tags, created } }) => {
+const PostPreview = ({ post }) => {
   return (
-    <div className="post-preview-header">
-        <post.PostPreviewAuthor name={name} image={image} userLink={userLink}/>
-        <tag.Tags tags={tags}/>
-        <utils.PostCreatedDate>{created}</utils.PostCreatedDate>
-    </div>
+    <postHeader.PostPreviewHeader post={post}/>
   )
 }
 
-PostPreviewHeader.propTypes = {
+PostPreview.propTypes = {
   post: PropTypes.shape({
     created: PropTypes.string,
     user: PropTypes.shape({
@@ -31,4 +25,4 @@ PostPreviewHeader.propTypes = {
   })
 }
 
-export default PostPreviewHeader
+export default PostPreview

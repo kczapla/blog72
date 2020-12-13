@@ -17,7 +17,7 @@ export const AuthorName = styled.span`
   color: black;
 `
 
-export const AuthorPreview = styled.span`
+export const AuthorPreview = styled.div`
   a:link {
     text-decoration: none;
   }
