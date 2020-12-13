@@ -12,7 +12,6 @@ const TagLink = styled.a`
 `
 
 const TagBox = styled.button`
-    ${'' /* background-color: whitesmoke; */}
     background-color: rgb(240,240,240);
     border-radius: 5px;
     border: none;
