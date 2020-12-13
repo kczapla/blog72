@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { AuthorLink, AuthorPreview, AuthorPreviewProfilePicture, AuthorName } from './author'
-import { Tag } from './tag'
 
 export const PostPreviewAuthor = ({ name, image, userLink }) => (
   <AuthorPreview>
@@ -47,30 +46,6 @@ export const PostPreviewDate = ({ date }) => {
 
 PostPreviewDate.propTypes = {
   date: PropTypes.string
-}
-
-export const PostPreviewTags = ({ tags }) => {
-  const tagList = tags.map(tag => (
-    <li key={tag.id}>
-      <Tag tag={tag}/>
-    </li>
-  ))
-
-  return (
-    <div className='post-preview-tags'>
-      <ul>
-        {tagList}
-      </ul>
-    </div>
-  )
-}
-
-PostPreviewTags.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    href: PropTypes.string
-  }))
 }
 
 export const PostPreviewDescription = ({ text, charLimit }) => {
