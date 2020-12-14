@@ -1,10 +1,12 @@
+import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const AuthorLink = styled.a`
+const AuthorLink = styled.a`
   style: hoover;
 `
 
-export const AuthorPreviewProfilePicture = styled.img`
+const AuthorPreviewProfilePicture = styled.img`
   height: 25px;
   width: 25px;
   padding: 10px;
@@ -12,12 +14,12 @@ export const AuthorPreviewProfilePicture = styled.img`
   vertical-align: middle;
 `
 
-export const AuthorName = styled.span`
+const AuthorName = styled.span`
   font-size: 15px;
   color: black;
 `
 
-export const AuthorPreview = styled.div`
+const AuthorPreview = styled.div`
   a:link {
     text-decoration: none;
   }
@@ -31,3 +33,18 @@ export const AuthorPreview = styled.div`
     text-decoration: underline;
   }
 `
+
+export const PostPreviewAuthor = ({ name, image, userLink }) => (
+  <AuthorPreview>
+    <AuthorLink href={userLink}>
+      <AuthorPreviewProfilePicture src={image}></AuthorPreviewProfilePicture>
+      <AuthorName>{name}</AuthorName>
+    </AuthorLink>
+  </AuthorPreview>
+)
+
+PostPreviewAuthor.propTypes = {
+  name: PropTypes.string,
+  image: PropTypes.string,
+  userLink: PropTypes.string
+}

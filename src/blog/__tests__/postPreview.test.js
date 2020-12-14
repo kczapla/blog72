@@ -3,20 +3,9 @@ import React from 'react'
 import { mount, configure } from 'enzyme'
 import ReactSeventeenAdapter from '@wojtekmaj/enzyme-adapter-react-17'
 
-import { PostPreviewAuthor, PostPreviewTitle, PostPreviewDate, PostPreviewDescription } from '../postPreview'
+import { PostPreviewTitle, PostPreviewDate, PostPreviewDescription } from '../postPreview'
 
 configure({ adapter: new ReactSeventeenAdapter() })
-
-describe('post preview author', () => {
-  const getPostPreviewUserWrapper = () => (
-    mount(<PostPreviewAuthor name={'john'} href={'/user/1'} img={'/images/john.png'}/>)
-  )
-
-  test('has image', () => {
-    const wrapper = getPostPreviewUserWrapper()
-    expect(wrapper.find('img')).toHaveLength(1)
-  })
-})
 
 describe('post preview title', () => {
   test('has heading', () => {

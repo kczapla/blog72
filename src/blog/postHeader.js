@@ -2,9 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import * as post from './postPreview'
+import * as author from './author'
 import * as tag from './tag'
-// import * as utils from './utils'
 
 const StyledPostPreviewHeader = styled.div`
     dispaly: table;
@@ -25,7 +24,7 @@ export const PostPreviewHeader = ({ post: { user: { name, image, userLink }, tag
   return (
     <StyledPostPreviewHeader>
         <StyledPreviewHeaderOuterCell>
-            <post.PostPreviewAuthor name={name} image={image} userLink={userLink}/>
+            <author.PostPreviewAuthor name={name} image={image} userLink={userLink}/>
         </StyledPreviewHeaderOuterCell>
         <StyledPreviewHeaderMiddleCell>
             <tag.Tags tags={tags}/>

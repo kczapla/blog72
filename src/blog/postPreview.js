@@ -1,23 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { AuthorLink, AuthorPreview, AuthorPreviewProfilePicture, AuthorName } from './author'
-
-export const PostPreviewAuthor = ({ name, image, userLink }) => (
-  <AuthorPreview>
-    <AuthorLink href={userLink}>
-      <AuthorPreviewProfilePicture src={image}></AuthorPreviewProfilePicture>
-      <AuthorName>{name}</AuthorName>
-    </AuthorLink>
-  </AuthorPreview>
-)
-
-PostPreviewAuthor.propTypes = {
-  name: PropTypes.string,
-  image: PropTypes.string,
-  userLink: PropTypes.string
-}
-
 export const PostPreview = ({ Author }) => {
     <div className="post-preview">
         <Author></Author>
