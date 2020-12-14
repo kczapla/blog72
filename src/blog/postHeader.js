@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import * as post from './postPreview'
 import * as tag from './tag'
-import * as utils from './utils'
+// import * as utils from './utils'
 
 const StyledPostPreviewHeader = styled.div`
     dispaly: table;
@@ -18,7 +18,7 @@ const StyledPreviewHeaderOuterCell = styled.div`
 
 const StyledPreviewHeaderMiddleCell = styled.div`
     display: table-cell;
-    width: 60%;
+    width: 80%;
 `
 
 export const PostPreviewHeader = ({ post: { user: { name, image, userLink }, tags, created } }) => {
@@ -30,9 +30,6 @@ export const PostPreviewHeader = ({ post: { user: { name, image, userLink }, tag
         <StyledPreviewHeaderMiddleCell>
             <tag.Tags tags={tags}/>
         </StyledPreviewHeaderMiddleCell>
-        <StyledPreviewHeaderOuterCell>
-            <utils.PostCreatedDate>{created}</utils.PostCreatedDate>
-        </StyledPreviewHeaderOuterCell>
     </StyledPostPreviewHeader>
   )
 }
