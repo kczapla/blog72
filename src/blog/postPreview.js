@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PostTitle } from './post'
-// import Tags from './tag'
+import { PostPreviewAuthor } from './author'
+import { PostTitle, PostPreviewDescription } from './post'
+import { Tags } from './tag'
 
 export const PostPreviewDate = ({ date }) => {
   return (
@@ -17,34 +18,27 @@ PostPreviewDate.propTypes = {
 
 const PostGrid = styled.div`
   display: grid;
-  background-color: blue;
   grid-gap: 20px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
 `
 
-const PostGridItem = styled.div`
-  background-color: red;
-`
-
-const PostPreview = ({ post: { user: { name, image, userLink }, tags, created } }) => {
+const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
   console.log({ name }, { image }, { userLink }, { tags }, { created })
   return (
     <PostGrid>
-      <PostTitle>ebebe</PostTitle>
-      <PostGridItem>ebebe</PostGridItem>
-      <PostGridItem>ebebe</PostGridItem>
-      <PostGridItem>ebebe</PostGridItem>
-      <PostGridItem>ebebe</PostGridItem>
-      <PostGridItem>ebebe</PostGridItem>
-      <PostGridItem>ebebe</PostGridItem>
-      <PostGridItem>ebebe</PostGridItem>
-      <PostGridItem>ebebe</PostGridItem>
+      <PostPreviewAuthor name={name} image={image} userLink={userLink}></PostPreviewAuthor>
+      <Tags tags={tags}></Tags>
+      <PostTitle>{title}</PostTitle>
+      <div></div>
+      <PostPreviewDescription text={content} charLimit={200}/>
     </PostGrid>
   )
 }
 
 PostPreview.propTypes = {
   post: PropTypes.shape({
+    title: PropTypes.string,
+    content: PropTypes.string,
     created: PropTypes.string,
     user: PropTypes.shape({
       name: PropTypes.string,
