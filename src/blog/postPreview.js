@@ -1,25 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-export const PostPreview = ({ Author }) => {
-    <div className="post-preview">
-        <Author></Author>
-    </div>
-}
-
-export const PostPreviewTitle = ({ title }) => {
-  return (
-  <div className='post-preview-title'>
-    <h2>
-        {title}
-    </h2>
-  </div>
-  )
-}
-
-PostPreviewTitle.propTypes = {
-  title: PropTypes.string
-}
+import { PostTitle } from './post'
+// import Tags from './tag'
 
 export const PostPreviewDate = ({ date }) => {
   return (
@@ -31,25 +15,48 @@ PostPreviewDate.propTypes = {
   date: PropTypes.string
 }
 
-export const PostPreviewDescription = ({ text, charLimit }) => {
-  let descriptionEnding = '...'
-  if (text.length <= charLimit) {
-    charLimit = text.length + 1
-    descriptionEnding = ''
-  }
+const PostGrid = styled.div`
+  display: grid;
+  background-color: blue;
+  grid-gap: 20px;
+  grid-template-columns: auto auto auto;
+`
 
-  const newText = text.substring(0, charLimit) + descriptionEnding
+const PostGridItem = styled.div`
+  background-color: red;
+`
 
+const PostPreview = ({ post: { user: { name, image, userLink }, tags, created } }) => {
+  console.log({ name }, { image }, { userLink }, { tags }, { created })
   return (
-    <div className='post-preview-description'>
-      <p>
-        {newText}
-      </p>
-    </div>
+    <PostGrid>
+      <PostTitle>ebebe</PostTitle>
+      <PostGridItem>ebebe</PostGridItem>
+      <PostGridItem>ebebe</PostGridItem>
+      <PostGridItem>ebebe</PostGridItem>
+      <PostGridItem>ebebe</PostGridItem>
+      <PostGridItem>ebebe</PostGridItem>
+      <PostGridItem>ebebe</PostGridItem>
+      <PostGridItem>ebebe</PostGridItem>
+      <PostGridItem>ebebe</PostGridItem>
+    </PostGrid>
   )
 }
 
-PostPreviewDescription.propTypes = {
-  text: PropTypes.string,
-  charLimit: PropTypes.number
+PostPreview.propTypes = {
+  post: PropTypes.shape({
+    created: PropTypes.string,
+    user: PropTypes.shape({
+      name: PropTypes.string,
+      image: PropTypes.string,
+      userLink: PropTypes.string
+    }),
+    tags: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      href: PropTypes.string
+    }))
+  })
 }
+
+export default PostPreview
