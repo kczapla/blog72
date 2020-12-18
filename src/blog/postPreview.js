@@ -18,14 +18,20 @@ PostPreviewDate.propTypes = {
 
 const PostGridLayout = styled.div`
   display: grid;
+  grid-auto-columns: 1fr 3fr;
+  grid-auto-rows: 1fr min-content;
   grid-template-areas:
-    "header header"
-    "main pictureItem"
-    "main pictureItem"
+    "author tags pictureItem"
+    "main main pictureItem"
+    "main main pictureItem"
 `
 
-const Header = styled.div`
-  grid-area: header;
+const Author = styled.div`
+  grid-area: author;
+`
+
+const Taggs = styled.div`
+  grid-area: tags;
 `
 
 const Main = styled.div`
@@ -39,16 +45,16 @@ const PictureItem = styled.div`
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
   return (
     <PostGridLayout>
-      <Header>
+      <Author>
         <PostPreviewAuthor name={name} image={image} userLink={userLink}></PostPreviewAuthor>
-        <Tags tags={tags}></Tags>
-      </Header>
+      </Author>
+      <Taggs><Tags tags={tags}/></Taggs>
       <Main>
         <PostTitle>{title}</PostTitle>
         <PostPreviewDescription text={content} charLimit={200}/>
       </Main>
       <PictureItem>
-        <img src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg" width={250} height={250}/>
+        <img object-fit="cover" src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg" width={250} height={250}/>
       </PictureItem>
     </PostGridLayout>
   )
