@@ -16,22 +16,41 @@ PostPreviewDate.propTypes = {
   date: PropTypes.string
 }
 
-const PostGrid = styled.div`
+const PostGridLayout = styled.div`
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto auto;
+  grid-template-areas:
+    "header header"
+    "main pictureItem"
+    "main pictureItem"
+`
+
+const Header = styled.div`
+  grid-area: header;
+`
+
+const Main = styled.div`
+  grid-area: main;
+`
+
+const PictureItem = styled.div`
+  grid-area: pictureItem;
 `
 
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
-  console.log({ name }, { image }, { userLink }, { tags }, { created })
   return (
-    <PostGrid>
-      <PostPreviewAuthor name={name} image={image} userLink={userLink}></PostPreviewAuthor>
-      <Tags tags={tags}></Tags>
-      <PostTitle>{title}</PostTitle>
-      <div></div>
-      <PostPreviewDescription text={content} charLimit={200}/>
-    </PostGrid>
+    <PostGridLayout>
+      <Header>
+        <PostPreviewAuthor name={name} image={image} userLink={userLink}></PostPreviewAuthor>
+        <Tags tags={tags}></Tags>
+      </Header>
+      <Main>
+        <PostTitle>{title}</PostTitle>
+        <PostPreviewDescription text={content} charLimit={200}/>
+      </Main>
+      <PictureItem>
+        <img src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg" width={250} height={250}/>
+      </PictureItem>
+    </PostGridLayout>
   )
 }
 
