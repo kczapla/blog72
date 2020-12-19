@@ -16,47 +16,59 @@ PostPreviewDate.propTypes = {
   date: PropTypes.string
 }
 
-const PostGridLayout = styled.div`
-  display: grid;
-  grid-auto-columns: 1fr 3fr;
-  grid-auto-rows: 1fr min-content;
-  grid-template-areas:
-    "author tags pictureItem"
-    "main main pictureItem"
-    "main main pictureItem"
+const BlogItem = styled.article`
+  display: flex
 `
 
-const Author = styled.div`
-  grid-area: author;
+const BlogItemImageContainer = styled.div`
+  postition: relative;
+  overflow: hidden;
+  width: 280px;
+  height: 180px;
+  margin: 20px;
+`
+const BlogItemImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
 `
 
-const Taggs = styled.div`
-  grid-area: tags;
+const BlogItemContentContainter = styled.div`
+  display: flex;
+  flex: 1 1;
+  margin: 20px;
+  flex-direction: column;
 `
 
-const Main = styled.div`
-  grid-area: main;
+const BlogItemContentHeader = styled.header`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-bottom: 0;
 `
 
-const PictureItem = styled.div`
-  grid-area: pictureItem;
+const BlogItemContent = styled.div`
 `
 
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
+  console.log(name, image, userLink, tags, created, title, content)
   return (
-    <PostGridLayout>
-      <Author>
-        <PostPreviewAuthor name={name} image={image} userLink={userLink}></PostPreviewAuthor>
-      </Author>
-      <Taggs><Tags tags={tags}/></Taggs>
-      <Main>
-        <PostTitle>{title}</PostTitle>
-        <PostPreviewDescription text={content} charLimit={200}/>
-      </Main>
-      <PictureItem>
-        <img object-fit="cover" src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg" width={250} height={250}/>
-      </PictureItem>
-    </PostGridLayout>
+    <BlogItem>
+      <BlogItemImageContainer>
+        <BlogItemImage src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg"/>
+      </BlogItemImageContainer>
+      <BlogItemContentContainter>
+        <BlogItemContentHeader>
+          <PostPreviewAuthor name={name} image={image} userLink={userLink}/>
+          <Tags tags={tags}></Tags>
+        </BlogItemContentHeader>
+        <BlogItemContent>
+          <PostTitle>{title}</PostTitle>
+          <PostPreviewDescription text={content} charLimit={200}/>
+        </BlogItemContent>
+      </BlogItemContentContainter>
+    </BlogItem>
   )
 }
 
