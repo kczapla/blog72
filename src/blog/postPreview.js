@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-// import { PostPreviewAuthor } from './author'
+import { PostPreviewAuthor } from './author'
 // import { PostTitle, PostPreviewDescription } from './post'
-// import { Tags } from './tag'
+import { Tags } from './tag'
 
 export const PostPreviewDate = ({ date }) => {
   return (
@@ -31,6 +31,18 @@ const BlogItemImage = styled.img`
   object-position: center center;
 `
 
+const BlogItemContent = styled(BlogItemImageContainer)`
+  display: flex;
+  flex: 1 1;
+  margin: 20px;
+`
+
+const BlogItemContentHeader = styled.header`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+`
+
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
   console.log(name, image, userLink, tags, created, title, content)
   return (
@@ -38,6 +50,12 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
       <BlogItemImageContainer>
         <BlogItemImage src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg"/>
       </BlogItemImageContainer>
+      <BlogItemContent>
+        <BlogItemContentHeader>
+          <PostPreviewAuthor name={name} image={image} userLink={userLink}/>
+          <Tags tags={tags}></Tags>
+        </BlogItemContentHeader>
+      </BlogItemContent>
     </BlogItem>
     // <PostGridLayout>
     //   <Author>
