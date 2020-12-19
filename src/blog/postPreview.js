@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 import { PostPreviewAuthor } from './author'
-// import { PostTitle, PostPreviewDescription } from './post'
+import { PostTitle, PostPreviewDescription } from './post'
 import { Tags } from './tag'
 
 export const PostPreviewDate = ({ date }) => {
@@ -23,6 +23,9 @@ const BlogItem = styled.article`
 const BlogItemImageContainer = styled.div`
   postition: relative;
   overflow: hidden;
+  width: 280px;
+  height: 180px;
+  margin: 20px;
 `
 const BlogItemImage = styled.img`
   width: 100%;
@@ -31,16 +34,21 @@ const BlogItemImage = styled.img`
   object-position: center center;
 `
 
-const BlogItemContent = styled(BlogItemImageContainer)`
+const BlogItemContentContainter = styled.div`
   display: flex;
   flex: 1 1;
   margin: 20px;
+  flex-direction: column;
 `
 
 const BlogItemContentHeader = styled.header`
   display: flex;
   flex-direction: row;
   align-items: baseline;
+  margin-bottom: 0;
+`
+
+const BlogItemContent = styled.div`
 `
 
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
@@ -50,26 +58,17 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
       <BlogItemImageContainer>
         <BlogItemImage src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg"/>
       </BlogItemImageContainer>
-      <BlogItemContent>
+      <BlogItemContentContainter>
         <BlogItemContentHeader>
           <PostPreviewAuthor name={name} image={image} userLink={userLink}/>
           <Tags tags={tags}></Tags>
         </BlogItemContentHeader>
-      </BlogItemContent>
+        <BlogItemContent>
+          <PostTitle>{title}</PostTitle>
+          <PostPreviewDescription text={content} charLimit={200}/>
+        </BlogItemContent>
+      </BlogItemContentContainter>
     </BlogItem>
-    // <PostGridLayout>
-    //   <Author>
-    //     <PostPreviewAuthor name={name} image={image} userLink={userLink}></PostPreviewAuthor>
-    //   </Author>
-    //   <Taggs><Tags tags={tags}/></Taggs>
-    //   <Main>
-    //     <PostTitle>{title}</PostTitle>
-    //     <PostPreviewDescription text={content} charLimit={200}/>
-    //   </Main>
-    //   <PictureItem>
-    //     <img object-fit="cover" src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg" width={250} height={250}/>
-    //   </PictureItem>
-    // </PostGridLayout>
   )
 }
 
