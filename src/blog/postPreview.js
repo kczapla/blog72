@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
-import { PostPreviewDescription } from './post'
+import LinesEllipsis from 'react-lines-ellipsis'
 
 export const PostPreviewDate = ({ date }) => {
   return (
@@ -35,17 +34,14 @@ const BlogItemImage = styled.img`
 const BlogItemContentContainter = styled.div`
   display: flex;
   flex: 1 1;
-  margin: 20px;
+  margin: 10px;
   flex-direction: column;
 `
 
 const BlogItemContentHeader = styled.header`
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-`
-
-const BlogItemContent = styled.div`
+  margin-bottom: 10px;
 `
 
 const BlogItemMetaDataContainer = styled.div`
@@ -90,6 +86,13 @@ const BlogItemAuthor = styled.span`
 `
 
 const BlogItemTitle = styled.h2`
+  margin-bottom: 0;
+`
+
+const BlogItemContent = styled.div`
+  font-size: inherit;
+  font-style: inherit;
+  color: black;
 `
 
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
@@ -109,7 +112,7 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
           </BlogItemMetaDataContainer>
         </BlogItemContentHeader>
         <BlogItemContent>
-          <PostPreviewDescription text={content} charLimit={200}/>
+          <LinesEllipsis text={content} maxLine={5} ellipsis={'...'}/>
         </BlogItemContent>
       </BlogItemContentContainter>
     </BlogItem>
