@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PostPreviewAuthor } from './author'
 import { PostTitle, PostPreviewDescription } from './post'
-import { Tags } from './tag'
 
 export const PostPreviewDate = ({ date }) => {
   return (
@@ -51,6 +49,47 @@ const BlogItemContentHeader = styled.header`
 const BlogItemContent = styled.div`
 `
 
+const BlogItemMetaDataContainer = styled.div`
+  font-size: 14px;
+  font-style: normal;
+  font-family: inherit;
+  color: grey;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  a:visited {
+    text-decoration: none;
+  }
+  a:hover {
+    color: orangered;
+  }
+  a:active {
+    text-decoration: none;
+  }
+`
+
+const BlogItemPostDate = styled.span`
+  font-size: inherit;
+  font-style: inherit;
+`
+
+const BlogItemByLine = styled.span`
+  font-size: inherit;
+  font-style: inherit;
+  text-transform: lowercase;
+`
+
+const BlogItemAuthor = styled.span`
+  font-size: inherit;
+  font-style: inherit;
+`
+
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
   console.log(name, image, userLink, tags, created, title, content)
   return (
@@ -60,8 +99,11 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
       </BlogItemImageContainer>
       <BlogItemContentContainter>
         <BlogItemContentHeader>
-          <PostPreviewAuthor name={name} image={image} userLink={userLink}/>
-          <Tags tags={tags}></Tags>
+          <BlogItemMetaDataContainer>
+            <BlogItemPostDate>{created}</BlogItemPostDate>
+            <BlogItemByLine> by </BlogItemByLine>
+            <BlogItemAuthor><a href={userLink}>{name}</a></BlogItemAuthor>
+          </BlogItemMetaDataContainer>
         </BlogItemContentHeader>
         <BlogItemContent>
           <PostTitle>{title}</PostTitle>
