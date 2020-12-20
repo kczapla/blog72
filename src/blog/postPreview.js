@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import LinesEllipsis from 'react-lines-ellipsis'
 import Moment from 'react-moment'
 
-const BlogItem = styled.article`
+const BlogItemContainer = styled.article`
   display: flex;
   flex-direction: row;
 
@@ -93,7 +93,7 @@ const BlogItemContent = styled.div`
 
 const PostPreview = ({ post: { author, image, created, title, content } }) => {
   return (
-    <BlogItem>
+    <BlogItemContainer>
       <BlogItemImageContainer>
         <BlogItemImage src={image}/>
       </BlogItemImageContainer>
@@ -112,7 +112,7 @@ const PostPreview = ({ post: { author, image, created, title, content } }) => {
           <LinesEllipsis text={content} maxLine={5} ellipsis={'...'}/>
         </BlogItemContent>
       </BlogItemContentContainter>
-    </BlogItem>
+    </BlogItemContainer>
   )
 }
 
