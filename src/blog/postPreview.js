@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PostTitle, PostPreviewDescription } from './post'
+import { PostPreviewDescription } from './post'
 
 export const PostPreviewDate = ({ date }) => {
   return (
@@ -41,9 +41,8 @@ const BlogItemContentContainter = styled.div`
 
 const BlogItemContentHeader = styled.header`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: baseline;
-  margin-bottom: 0;
 `
 
 const BlogItemContent = styled.div`
@@ -90,6 +89,9 @@ const BlogItemAuthor = styled.span`
   font-style: inherit;
 `
 
+const BlogItemTitle = styled.h2`
+`
+
 const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
   console.log(name, image, userLink, tags, created, title, content)
   return (
@@ -99,6 +101,7 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
       </BlogItemImageContainer>
       <BlogItemContentContainter>
         <BlogItemContentHeader>
+          <BlogItemTitle>{title}</BlogItemTitle>
           <BlogItemMetaDataContainer>
             <BlogItemPostDate>{created}</BlogItemPostDate>
             <BlogItemByLine> by </BlogItemByLine>
@@ -106,7 +109,6 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
           </BlogItemMetaDataContainer>
         </BlogItemContentHeader>
         <BlogItemContent>
-          <PostTitle>{title}</PostTitle>
           <PostPreviewDescription text={content} charLimit={200}/>
         </BlogItemContent>
       </BlogItemContentContainter>
