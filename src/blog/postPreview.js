@@ -15,7 +15,12 @@ PostPreviewDate.propTypes = {
 }
 
 const BlogItem = styled.article`
-  display: flex
+  display: flex;
+  flex-direction: row;
+  
+  &:hover {
+    box-shadow: 0px 0px 30px #888888;
+  }
 `
 
 const BlogItemImageContainer = styled.div`
