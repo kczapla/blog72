@@ -4,20 +4,10 @@ import styled from 'styled-components'
 import LinesEllipsis from 'react-lines-ellipsis'
 import Moment from 'react-moment'
 
-export const PostPreviewDate = ({ date }) => {
-  return (
-    <span className='post-preview-date'>{date}</span>
-  )
-}
-
-PostPreviewDate.propTypes = {
-  date: PropTypes.string
-}
-
 const BlogItem = styled.article`
   display: flex;
   flex-direction: row;
-  
+
   &:hover {
     box-shadow: 0px 0px 30px #888888;
   }
@@ -101,12 +91,11 @@ const BlogItemContent = styled.div`
   color: black;
 `
 
-const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, title, content } }) => {
-  console.log(name, image, userLink, tags, created, title, content)
+const PostPreview = ({ post: { author, image, created, title, content } }) => {
   return (
     <BlogItem>
       <BlogItemImageContainer>
-        <BlogItemImage src="https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg"/>
+        <BlogItemImage src={image}/>
       </BlogItemImageContainer>
       <BlogItemContentContainter>
         <BlogItemContentHeader>
@@ -116,7 +105,7 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
               <Moment format='MMM DD, YYYY'>{created}</Moment>
             </BlogItemPostDate>
             <BlogItemByLine> by </BlogItemByLine>
-            <BlogItemAuthor><a href={userLink}>{name}</a></BlogItemAuthor>
+            <BlogItemAuthor><a href={author.href}>{author.name}</a></BlogItemAuthor>
           </BlogItemMetaDataContainer>
         </BlogItemContentHeader>
         <BlogItemContent>
@@ -130,18 +119,13 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
 PostPreview.propTypes = {
   post: PropTypes.shape({
     title: PropTypes.string,
+    image: PropTypes.string,
     content: PropTypes.string,
     created: PropTypes.string,
-    user: PropTypes.shape({
-      name: PropTypes.string,
-      image: PropTypes.string,
-      userLink: PropTypes.string
-    }),
-    tags: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number,
+    author: PropTypes.shape({
       name: PropTypes.string,
       href: PropTypes.string
-    }))
+    })
   })
 }
 

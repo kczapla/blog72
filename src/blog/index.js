@@ -5,11 +5,11 @@ import PostPreview from './postPreview'
 const data = [
   {
     title: 'this is post about cmake',
+    image: 'https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg',
     created: '2020-10-10',
-    user: {
+    author: {
       name: 'john',
-      image: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
-      userLink: 'https://google.com'
+      href: 'https://google.com'
     },
     tags: [
       {
@@ -32,11 +32,11 @@ const data = [
   },
   {
     title: 'this is post about cmake',
+    image: 'https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg',
     created: '2020-10-10',
-    user: {
+    author: {
       name: 'john',
-      image: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
-      userLink: 'https://google.com'
+      href: 'https://google.com'
     },
     tags: [
       {
@@ -59,11 +59,11 @@ const data = [
   },
   {
     title: 'yet another post about c++!',
+    image: 'https://www.obrazydeco.pl/1007-large_default/jan-pawel-ii-obraz-drukowany-na-plotnie.jpg',
     created: '2020-10-10',
-    user: {
+    author: {
       name: 'john',
-      image: 'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
-      userLink: 'https://google.com'
+      href: 'https://google.com'
     },
     tags: [
       {
