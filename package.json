@@ -7,10 +7,12 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "eslint-config-standard": "^16.0.2",
+    "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-lines-ellipsis": "^0.14.1",
+    "react-moment": "^1.1.1",
     "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"

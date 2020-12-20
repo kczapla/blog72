@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import LinesEllipsis from 'react-lines-ellipsis'
+import Moment from 'react-moment'
 
 export const PostPreviewDate = ({ date }) => {
   return (
@@ -106,7 +107,9 @@ const PostPreview = ({ post: { user: { name, image, userLink }, tags, created, t
         <BlogItemContentHeader>
           <BlogItemTitle>{title}</BlogItemTitle>
           <BlogItemMetaDataContainer>
-            <BlogItemPostDate>{created}</BlogItemPostDate>
+            <BlogItemPostDate>
+              <Moment format='MMM DD, YYYY'>{created}</Moment>
+            </BlogItemPostDate>
             <BlogItemByLine> by </BlogItemByLine>
             <BlogItemAuthor><a href={userLink}>{name}</a></BlogItemAuthor>
           </BlogItemMetaDataContainer>
