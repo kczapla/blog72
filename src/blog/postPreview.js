@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import LinesEllipsis from 'react-lines-ellipsis'
 import Moment from 'react-moment'
 
+import BlogItemImage from './blog-item-image'
+
 const BlogItemContainer = styled.article`
   display: flex;
   flex-direction: row;
@@ -19,12 +21,6 @@ const BlogItemImageContainer = styled.div`
   width: 280px;
   height: 180px;
   margin: 20px;
-`
-const BlogItemImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
 `
 
 const BlogItemContentContainter = styled.div`
@@ -95,7 +91,7 @@ const PostPreview = ({ post: { author, image, created, title, content } }) => {
   return (
     <BlogItemContainer>
       <BlogItemImageContainer>
-        <BlogItemImage src={image}/>
+        <BlogItemImage image={image}/>
       </BlogItemImageContainer>
       <BlogItemContentContainter>
         <BlogItemContentHeader>

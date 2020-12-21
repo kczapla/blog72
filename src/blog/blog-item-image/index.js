@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { StyledBlogItemImage } from './style'
 
 const BlogItemImage = ({ image }) => {
-  return (<StyledBlogItemImage image={image}/>)
+  return (<StyledBlogItemImage src={image}/>)
 }
 
 BlogItemImage.propTypes = {
