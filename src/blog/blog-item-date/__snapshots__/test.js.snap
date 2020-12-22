@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<time
+  dateTime={"2020-01-01T00:00:00.000Z"}
+>
+  Jan 01, 2020
+</time>
+`;
