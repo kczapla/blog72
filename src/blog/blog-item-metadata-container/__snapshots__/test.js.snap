@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="sc-bdfBwQ iIIyjq"
+>
+  <time
+    dateTime={"2020-01-01T00:00:00.000Z"}
+  >
+    Jan 01, 2020
+  </time>
+  <span
+    className="sc-gsTCUz ra-dMI"
+  >
+     by 
+  </span>
+  <span
+    className="sc-dlfnbm hahudT"
+  >
+    <a
+      className="sc-hKgILt blFMmE"
+      href="tmp"
+    >
+      tmp
+    </a>
+  </span>
+</div>
+`;
