@@ -1,19 +1,21 @@
 import styled from 'styled-components'
 
 export const StyledDiscreteTextLink = styled.a`
-  a {
-    color: inherit;
-  }
-  a:link {
+  color: inherit;
+
+  &:link {
     text-decoration: none;
   }
-  a:visited {
+
+  &:visited {
     text-decoration: none;
   }
-  a:hover {
+
+  &:hover {
     color: orangered;
   }
-  a:active {
+  
+  &:active {
     text-decoration: none;
   }
 `
