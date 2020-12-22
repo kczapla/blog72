@@ -8,7 +8,7 @@ import { StyledReadMore } from './style'
 const ReadMore = ({ href }) => {
   return (
       <StyledReadMore>
-        <DiscreteTextLink href={href} text={'>read me'}/>
+        <DiscreteTextLink href={href} text={'>read more'}/>
       </StyledReadMore>
   )
 }

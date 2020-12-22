@@ -9,7 +9,7 @@ import ReadMore from './read-more'
 const BlogItemContent = ({ href, content }) => {
   return (
     <StyledBlogItemContent>
-        <LinesEllipsis text={content} maxLine={1} ellipsis={'...'}/>
+        <LinesEllipsis text={content} maxLine={3} ellipsis={'...'}/>
         <ReadMore href={href}/>
     </StyledBlogItemContent>
   )
