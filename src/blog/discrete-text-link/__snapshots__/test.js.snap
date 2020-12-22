@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`discrete text link renders correctly 1`] = `
+<a
+  className="sc-bdfBwQ hEXpIa"
+  href="https://google.com"
+>
+  tmp
+</a>
+`;
