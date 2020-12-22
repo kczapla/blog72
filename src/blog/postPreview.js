@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import LinesEllipsis from 'react-lines-ellipsis'
-import Moment from 'react-moment'
 
 import BlogItemImage from './blog-item-image'
+import BlogItemPostDate from './blog-item-date'
 
 const BlogItemContainer = styled.article`
   display: flex;
@@ -61,11 +61,6 @@ const BlogItemMetaDataContainer = styled.div`
   }
 `
 
-const BlogItemPostDate = styled.span`
-  font-size: inherit;
-  font-style: inherit;
-`
-
 const BlogItemByLine = styled.span`
   font-size: inherit;
   font-style: inherit;
@@ -97,9 +92,7 @@ const PostPreview = ({ post: { author, image, created, title, content } }) => {
         <BlogItemContentHeader>
           <BlogItemTitle>{title}</BlogItemTitle>
           <BlogItemMetaDataContainer>
-            <BlogItemPostDate>
-              <Moment format='MMM DD, YYYY'>{created}</Moment>
-            </BlogItemPostDate>
+            <BlogItemPostDate date={created}/>
             <BlogItemByLine> by </BlogItemByLine>
             <BlogItemAuthor><a href={author.href}>{author.name}</a></BlogItemAuthor>
           </BlogItemMetaDataContainer>
