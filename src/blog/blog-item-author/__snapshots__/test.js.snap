@@ -5,7 +5,10 @@ exports[`blog item author renders correctly 1`] = `
   className="sc-bdfBwQ kGqeyI"
 >
   <a
-    className="sc-gsTCUz elSzKW"
-  />
+    className="sc-gsTCUz hSRWHd"
+    href="https://google.com"
+  >
+    tmp
+  </a>
 </span>
 `;

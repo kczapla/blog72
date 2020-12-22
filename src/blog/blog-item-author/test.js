@@ -10,7 +10,7 @@ import BlogItemAuthor from './index'
 describe('blog item author', () => {
   it('renders correctly', () => {
     const tree = renderer
-      .create(<BlogItemAuthor content={'tmp'}/>)
+      .create(<BlogItemAuthor href={'https://google.com'} name={'tmp'}/>)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
