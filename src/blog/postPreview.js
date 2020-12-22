@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import LinesEllipsis from 'react-lines-ellipsis'
 
 import ByLine from './by-line'
 import BlogItemImage from './blog-item-image'
 import BlogItemTitle from './blog-item-title'
 import BlogItemAuthor from './blog-item-author'
+import BlogItemContent from './blog-item-content'
 import BlogItemPostDate from './blog-item-date'
 import BlogItemMetadataContainer from './blog-item-metadata-container'
 
@@ -40,12 +40,6 @@ const BlogItemContentHeader = styled.header`
   margin-bottom: 10px;
 `
 
-const BlogItemContent = styled.div`
-  font-size: inherit;
-  font-style: inherit;
-  color: black;
-`
-
 const PostPreview = ({ post: { author, image, created, title, content } }) => {
   return (
     <BlogItemContainer>
@@ -61,9 +55,7 @@ const PostPreview = ({ post: { author, image, created, title, content } }) => {
             <BlogItemAuthor href={author.href} name={author.name}/>
           </BlogItemMetadataContainer>
         </BlogItemContentHeader>
-        <BlogItemContent>
-          <LinesEllipsis text={content} maxLine={5} ellipsis={'...'}/>
-        </BlogItemContent>
+        <BlogItemContent href={'https://google.com'} content={content}/>
       </BlogItemContentContainter>
     </BlogItemContainer>
   )
