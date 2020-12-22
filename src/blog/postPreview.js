@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import LinesEllipsis from 'react-lines-ellipsis'
 
+import BlogItemAuthor from './blog-item-author'
 import BlogItemImage from './blog-item-image'
 import BlogItemPostDate from './blog-item-date'
 
@@ -43,33 +44,12 @@ const BlogItemMetaDataContainer = styled.div`
   color: grey;
   letter-spacing: 1px;
   text-transform: uppercase;
-
-  a {
-    color: inherit;
-  }
-  a:link {
-    text-decoration: none;
-  }
-  a:visited {
-    text-decoration: none;
-  }
-  a:hover {
-    color: orangered;
-  }
-  a:active {
-    text-decoration: none;
-  }
 `
 
 const BlogItemByLine = styled.span`
   font-size: inherit;
   font-style: inherit;
   text-transform: lowercase;
-`
-
-const BlogItemAuthor = styled.span`
-  font-size: inherit;
-  font-style: inherit;
 `
 
 const BlogItemTitle = styled.h2`
@@ -94,7 +74,7 @@ const PostPreview = ({ post: { author, image, created, title, content } }) => {
           <BlogItemMetaDataContainer>
             <BlogItemPostDate date={created}/>
             <BlogItemByLine> by </BlogItemByLine>
-            <BlogItemAuthor><a href={author.href}>{author.name}</a></BlogItemAuthor>
+            <BlogItemAuthor href={author.href} name={author.name}/>
           </BlogItemMetaDataContainer>
         </BlogItemContentHeader>
         <BlogItemContent>
