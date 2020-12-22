@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blog item author renders correctly 1`] = `
+<span
+  className="sc-bdfBwQ kGqeyI"
+>
+  <a
+    className="sc-gsTCUz elSzKW"
+  />
+</span>
+`;
