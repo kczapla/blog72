@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import LinesEllipsis from 'react-lines-ellipsis'
 
-import BlogItemAuthor from './blog-item-author'
-import BlogItemImage from './blog-item-image'
-import BlogItemPostDate from './blog-item-date'
-import BlogItemTitle from './blog-item-title'
 import ByLine from './by-line'
+import BlogItemImage from './blog-item-image'
+import BlogItemTitle from './blog-item-title'
+import BlogItemAuthor from './blog-item-author'
+import BlogItemPostDate from './blog-item-date'
+import BlogItemMetadataContainer from './blog-item-metadata-container'
 
 const BlogItemContainer = styled.article`
   display: flex;
@@ -39,15 +40,6 @@ const BlogItemContentHeader = styled.header`
   margin-bottom: 10px;
 `
 
-const BlogItemMetaDataContainer = styled.div`
-  font-size: 14px;
-  font-style: normal;
-  font-family: inherit;
-  color: grey;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-`
-
 const BlogItemContent = styled.div`
   font-size: inherit;
   font-style: inherit;
@@ -63,11 +55,11 @@ const PostPreview = ({ post: { author, image, created, title, content } }) => {
       <BlogItemContentContainter>
         <BlogItemContentHeader>
           <BlogItemTitle title={title}/>
-          <BlogItemMetaDataContainer>
+          <BlogItemMetadataContainer>
             <BlogItemPostDate date={created}/>
             <ByLine/>
             <BlogItemAuthor href={author.href} name={author.name}/>
-          </BlogItemMetaDataContainer>
+          </BlogItemMetadataContainer>
         </BlogItemContentHeader>
         <BlogItemContent>
           <LinesEllipsis text={content} maxLine={5} ellipsis={'...'}/>

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const StyledBlogItemMetadataContainer = styled.div`
+export const BlogItemMetadataContainer = styled.div`
   font-size: 14px;
   font-style: normal;
   font-family: inherit;
@@ -8,3 +8,4 @@ export const StyledBlogItemMetadataContainer = styled.div`
   letter-spacing: 1px;
   text-transform: uppercase;
 `
+export default BlogItemMetadataContainer
