@@ -6,6 +6,7 @@ import LinesEllipsis from 'react-lines-ellipsis'
 import BlogItemAuthor from './blog-item-author'
 import BlogItemImage from './blog-item-image'
 import BlogItemPostDate from './blog-item-date'
+import BlogItemTitle from './blog-item-title'
 import ByLine from './by-line'
 
 const BlogItemContainer = styled.article`
@@ -47,10 +48,6 @@ const BlogItemMetaDataContainer = styled.div`
   text-transform: uppercase;
 `
 
-const BlogItemTitle = styled.h2`
-  margin-bottom: 0;
-`
-
 const BlogItemContent = styled.div`
   font-size: inherit;
   font-style: inherit;
@@ -65,7 +62,7 @@ const PostPreview = ({ post: { author, image, created, title, content } }) => {
       </BlogItemImageContainer>
       <BlogItemContentContainter>
         <BlogItemContentHeader>
-          <BlogItemTitle>{title}</BlogItemTitle>
+          <BlogItemTitle title={title}/>
           <BlogItemMetaDataContainer>
             <BlogItemPostDate date={created}/>
             <ByLine/>
