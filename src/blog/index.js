@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PostPreview from './postPreview'
+import BlogItem from './blog-item'
 
 const data = [
   {
@@ -89,7 +89,7 @@ const data = [
 export const PostList = () => {
   const posts = data.map((post, key) => {
     console.log(post.toString())
-    return <PostPreview key={key} post={post}/>
+    return <BlogItem key={key} post={post}/>
   })
 
   return (
