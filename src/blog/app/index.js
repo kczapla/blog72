@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BlogItem from './blog-item'
+import BlogItem from '../blog-item'
 
 const data = [
   {
@@ -86,7 +86,7 @@ const data = [
   }
 ]
 
-export const PostList = () => {
+export const App = () => {
   const posts = data.map((post, key) => {
     console.log(post.toString())
     return <BlogItem key={key} post={post}/>
@@ -99,4 +99,4 @@ export const PostList = () => {
   )
 }
 
-export default PostList
+export default App
