@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blog item content header renders correctly 1`] = `
+<header
+  className="sc-bdfBwQ jnglJE"
+>
+  <h2
+    className="sc-dlfnbm eVErIe"
+  >
+    tmp
+  </h2>
+  <div
+    className="sc-jSgupP gwYLfx"
+  >
+    <time
+      dateTime={"2020-01-01T00:00:00.000Z"}
+    >
+      Jan 01, 2020
+    </time>
+    <span
+      className="sc-gsTCUz ra-dMI"
+    >
+       by 
+    </span>
+    <span
+      className="sc-hKgILt glBrcB"
+    >
+      <a
+        className="sc-eCssSg cSNUOP"
+      />
+    </span>
+  </div>
+</header>
+`;
