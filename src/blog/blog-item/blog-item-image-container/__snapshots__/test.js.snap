@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blog item image container renders correctly 1`] = `
+<div
+  className="sc-bdfBwQ iTesnw"
+>
+  <img
+    className="sc-gsTCUz rQlxY"
+    src="tmp"
+  />
+</div>
+`;
