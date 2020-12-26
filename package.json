@@ -2,6 +2,7 @@
   "name": "blog72",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:9000/api",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
@@ -22,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "mock-api": "node ./mock-api/app.js",
+    "dev": "run-p start mock-api"
   },
   "eslintConfig": {
     "extends": [
@@ -53,6 +56,7 @@
     "eslint": "^7.14.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "npm-run-all": "^4.1.5"
   }
 }
