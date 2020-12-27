@@ -2,6 +2,7 @@ import React from 'react'
 
 import BlogItem from '../blog-item'
 import { useFetchPosts } from './hook'
+import { StyledBlogItemList } from './style'
 
 const BlogItemList = () => {
   const rawPosts = useFetchPosts()
@@ -9,7 +10,7 @@ const BlogItemList = () => {
     return <BlogItem key={post.id} post={post}/>
   })
   return (
-    <div>{posts}</div>
+    <StyledBlogItemList>{posts}</StyledBlogItemList>
   )
 }
 
