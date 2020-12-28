@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`navigation bar renders correctly 1`] = `
+<nav
+  className="sc-gsTCUz cYoknp"
+>
+  <div
+    className="sc-dlfnbm ldmZRN"
+  >
+    <a />
+    <a />
+    <a />
+  </div>
+</nav>
+`;
