@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const StyledNavigationBar = styled.nav`
-    width: auto;
+    width: 100%;
     
     background-color: white;
 

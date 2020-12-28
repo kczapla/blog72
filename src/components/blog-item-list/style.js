@@ -5,4 +5,6 @@ export const StyledBlogItemList = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    max-width: 75%;
 `

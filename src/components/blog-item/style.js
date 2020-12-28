@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const StyledBlogItem = styled.div`
   display: flex;
-  width: 60%;
   flex-direction: row;
   margin: 15px;
 

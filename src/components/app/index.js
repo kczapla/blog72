@@ -5,16 +5,20 @@ import Blog from '../blog'
 import BlogItemList from '../blog-item-list'
 import NavigationBar from './navigation-bar'
 
+import { StyledApp } from './style'
+
 export const App = () => {
   return (
-    <Router>
-      <NavigationBar/>
-      <Switch>
-        <Route exact={true} path='/blog'>
-          <Blog><BlogItemList/></Blog>
-        </Route>
-      </Switch>
-    </Router>
+    <StyledApp>
+      <Router>
+        <NavigationBar/>
+        <Switch>
+          <Route exact={true} path='/blog'>
+            <Blog><BlogItemList/></Blog>
+          </Route>
+        </Switch>
+      </Router>
+    </StyledApp>
   )
 }
 
