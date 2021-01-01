@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export const useFetchPost = (initialPostId) => {
   const [postId, setPostId] = useState(initialPostId)
-  const [fetchedPostData, setFetchedPostData] = useState(null)
+  const [fetchedPostData, setFetchedPostData] = useState({})
 
   useEffect(() => {
     const fetchPost = async () => {

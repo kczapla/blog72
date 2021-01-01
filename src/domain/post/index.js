@@ -8,7 +8,7 @@ import { useFetchPost } from './hook'
 
 const Post = () => {
   const post = useFetchPost(1)
-  if (post === null) {
+  if (Object.keys(post).length === 0) {
     return null
   }
 
