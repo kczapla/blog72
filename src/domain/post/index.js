@@ -4,11 +4,18 @@ import PostHeader from './post-header'
 import PostContent from './post-content'
 import PostContainer from './post-container'
 
+import { useFetchPost } from './hook'
+
 const Post = () => {
+  const post = useFetchPost(1)
+  if (Object.keys(post).length === 0) {
+    return null
+  }
+
   return (
     <PostContainer>
-      <PostHeader post={{ title: 'test', created: '2020-01-01', author: { name: 'john', href: 'https://google.com' } }}/>
-      <PostContent post={{ content: 'content' }}/>
+      <PostHeader post={post}/>
+      <PostContent post={post}/>
     </PostContainer>
   )
 }
