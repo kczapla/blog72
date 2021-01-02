@@ -25,6 +25,7 @@ jest.mock('./post-header', () => {
 })
 
 jest.mock('axios')
+jest.useFakeTimers()
 
 describe('post', () => {
   it('uses fetched data from api', async () => {

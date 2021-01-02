@@ -9,6 +9,7 @@ export const useFetchPost = (initialPostId) => {
 
   useEffect(() => {
     const fetchPost = async () => {
+      setIsLoading(true)
       await axios.get('/posts/'.concat(postId))
         .then(response => {
           setFetchedPostData(response.data)
@@ -16,10 +17,9 @@ export const useFetchPost = (initialPostId) => {
         .catch(error => {
           console.log(error)
         })
+      setIsLoading(false)
     }
-    setIsLoading(true)
     fetchPost()
-    setIsLoading(false)
   }, [postId])
   return [fetchedPostData, isLoading]
 }
