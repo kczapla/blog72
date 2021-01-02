@@ -42,4 +42,9 @@ describe('post', () => {
     render(<Post/>)
     await expect(screen.findByText('post content')).rejects.toBeTruthy()
   })
+  it('renders loading when fetching data', async () => {
+    axios.get.mockResolvedValue({ data: { title: 'test title' } })
+    render(<Post/>)
+    await waitForElementToBeRemoved(() => screen.queryByText('loading'))
+  })
 })
