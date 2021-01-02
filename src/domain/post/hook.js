@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export const useFetchPost = (initialPostId) => {
+  const [isLoading, setIsLoading] = useState(true)
   const [postId, setPostId] = useState(initialPostId)
   const [fetchedPostData, setFetchedPostData] = useState({})
 
@@ -16,7 +17,9 @@ export const useFetchPost = (initialPostId) => {
           console.log(error)
         })
     }
+    setIsLoading(true)
     fetchPost()
+    setIsLoading(false)
   }, [postId])
-  return fetchedPostData
+  return [fetchedPostData, isLoading]
 }
