@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.1",
     "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
