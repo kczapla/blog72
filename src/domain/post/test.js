@@ -34,14 +34,9 @@ describe('post', () => {
     await expect(screen.findByText('test title')).resolves.toBeTruthy()
   })
   it('does not render when fetched data is empty', async () => {
-    axios.get.mockResolvedValue({ data: {} })
+    axios.get.mockRejectedValue('error')
     render(<Post/>)
-    await expect(screen.findByText('post content')).rejects.toBeTruthy()
-  })
-  it('does not render when error occured while fetching data', async () => {
-    axios.get.mockResolvedValue({ data: [] })
-    render(<Post/>)
-    await expect(screen.findByText('post content')).rejects.toBeTruthy()
+    await expect(screen.findByText('error occured')).resolves.toBeTruthy()
   })
   it('renders loading when fetching data', async () => {
     axios.get.mockResolvedValue({ data: { title: 'test title' } })
