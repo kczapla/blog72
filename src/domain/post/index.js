@@ -8,9 +8,6 @@ import { useFetchPost } from './hook'
 
 const Post = () => {
   const [post, isPostFetching] = useFetchPost(1)
-  if (Object.keys(post).length === 0) {
-    return <PostContainer>{'loading'}</PostContainer>
-  }
 
   if (isPostFetching) {
     return <PostContainer>{'loading'}</PostContainer>
