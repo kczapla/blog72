@@ -5,14 +5,13 @@ import axios from 'axios'
 export const useFetchPost = (initialPostId) => {
   const [isError, setIsError] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
-  const [postId, setPostId] = useState(initialPostId)
   const [fetchedPostData, setFetchedPostData] = useState({})
 
   useEffect(() => {
     const fetchPost = async () => {
       setIsLoading(true)
       setIsError(false)
-      await axios.get('/posts/'.concat(postId))
+      await axios.get('/posts/'.concat(initialPostId))
         .then(response => {
           setFetchedPostData(response.data)
         })
@@ -23,6 +22,6 @@ export const useFetchPost = (initialPostId) => {
       setIsLoading(false)
     }
     fetchPost()
-  }, [postId])
+  }, [])
   return [fetchedPostData, isLoading, isError]
 }
