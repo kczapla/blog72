@@ -4,10 +4,13 @@ import PostHeader from './post-header'
 import PostContent from './post-content'
 import PostContainer from './post-container'
 
+import { useParams } from 'react-router-dom'
+
 import { useFetchPost } from './hook'
 
 const Post = () => {
-  const [post, isPostFetching, isFetchSuccessful] = useFetchPost(1)
+  const { postId } = useParams()
+  const [post, isPostFetching, isFetchSuccessful] = useFetchPost(postId)
 
   if (isFetchSuccessful) {
     return <PostContainer>{'error occured'}</PostContainer>
