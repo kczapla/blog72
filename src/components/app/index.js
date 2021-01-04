@@ -5,6 +5,7 @@ import Blog from '../blog'
 import Post from '../../domain/post'
 import BlogItemList from '../blog-item-list'
 import NavigationBar from './navigation-bar'
+import MainContent from './main-content'
 
 import { StyledApp } from './style'
 
@@ -13,6 +14,7 @@ export const App = () => {
     <StyledApp>
       <Router>
         <NavigationBar/>
+        <MainContent>
         <Switch>
           <Route exact={true} path='/blog'>
             <Blog><BlogItemList/></Blog>
@@ -21,6 +23,7 @@ export const App = () => {
             <Post/>
           </Route>
         </Switch>
+        </MainContent>
       </Router>
     </StyledApp>
   )
