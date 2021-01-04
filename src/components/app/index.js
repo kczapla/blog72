@@ -17,7 +17,7 @@ export const App = () => {
           <Route exact={true} path='/blog'>
             <Blog><BlogItemList/></Blog>
           </Route>
-          <Route exact={true} path='/posts/:id'>
+          <Route exact={true} path='/posts/:postId'>
             <Post/>
           </Route>
         </Switch>
