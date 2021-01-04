@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 
-const Blog = styled.main`
+const MainContent = styled.main`
     display: flex;
     justify-content: center;
-    height: 100%;
+
+    margin-top: 30px;
 `
-export default Blog
+
+export default MainContent
