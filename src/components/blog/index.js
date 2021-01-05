@@ -1,8 +1,18 @@
-import styled from 'styled-components'
+import React from 'react'
 
-const Blog = styled.main`
-    display: flex;
-    justify-content: center;
-    height: 100%;
-`
+import { StyledBlog } from './style'
+import { useFetchPosts } from './hook'
+
+import BlogItemList from '../blog-item-list'
+
+const Blog = () => {
+  const posts = useFetchPosts()
+
+  return (
+    <StyledBlog>
+        <BlogItemList posts={posts}/>
+    </StyledBlog>
+  )
+}
+
 export default Blog

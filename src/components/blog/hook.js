@@ -8,7 +8,6 @@ export const useFetchPosts = () => {
     const fetchPosts = async () => {
       await axios.get('/posts')
         .then(response => {
-          console.log('resolved response ', response.data)
           setData(response.data)
         })
         .catch(error => {

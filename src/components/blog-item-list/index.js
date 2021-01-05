@@ -1,17 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import BlogItem from '../blog-item'
-import { useFetchPosts } from './hook'
 import { StyledBlogItemList } from './style'
 
-const BlogItemList = () => {
-  const rawPosts = useFetchPosts()
-  const posts = rawPosts.map(post => {
+const BlogItemList = ({ posts }) => {
+  const blogItemList = posts.map(post => {
     return <BlogItem key={post.id} post={post}/>
   })
+
   return (
-    <StyledBlogItemList>{posts}</StyledBlogItemList>
+    <StyledBlogItemList>{blogItemList}</StyledBlogItemList>
   )
+}
+
+BlogItemList.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default BlogItemList
