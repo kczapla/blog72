@@ -1,25 +1,19 @@
 import React from 'react'
 import axios from 'axios'
 
-import {
-  MemoryRouter,
-  Switch,
-  Route
-} from 'react-router'
+import { MemoryRouter } from 'react-router'
 
 import { render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import Post from './index'
 
-const renderWithRouter = (reactComponent) => {
+import Routes from '../../components/routes'
+
+const renderWithRouter = () => {
   render(
     <MemoryRouter initialEntries={['/posts/1']}>
-      <Switch>
-        <Route path='/posts/:postId'>
-          {reactComponent}
-        </Route>
-      </Switch>
+      <Routes/>
     </MemoryRouter>
   )
 }
