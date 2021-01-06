@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`blog renders correctly 1`] = `
-<article
-  className="sc-bdfBwQ iylRfi"
->
-  <div />
-</article>
-`;
