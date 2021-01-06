@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
-import { StyledPostContent } from './style'
+import ReactMarkdown from 'react-markdown'
 
 const PostContent = ({ post: { content } }) => {
-  return <StyledPostContent>{content}</StyledPostContent>
+  return <ReactMarkdown>{content}</ReactMarkdown>
 }
 
 PostContent.propTypes = {
