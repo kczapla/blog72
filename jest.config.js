@@ -1,8 +1,4 @@
-module.export = async () => {
-  return {
-    testRegex: '((\\.|/*.)(spec))\\.js?$',
-    setupFilesAfterEnv: [
-      '<rootDir>/jest.setup.js'
-    ]
-  }
+module.exports = {
+  moduleNameMapper: { '\\.css$': 'identity-obj-proxy' },
+  transformIgnorePatterns: ['node_modules/(?!react-syntax-highlighter)']
 }
