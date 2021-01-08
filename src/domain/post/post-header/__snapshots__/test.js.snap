@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`discrete text link renders correctly 1`] = `
+<header
+  className="sc-jSgupP ilOTjx"
+>
+  <h2
+    className="sc-gsTCUz eZvnGp"
+  >
+    title
+  </h2>
+  <div
+    className="sc-eCssSg kCCemc"
+  >
+    <time
+      dateTime={"2021-01-01T00:00:00.000Z"}
+    >
+      Jan 01, 2021
+    </time>
+    <span
+      className="sc-bdfBwQ kagGIA"
+    >
+       by 
+    </span>
+    <span
+      className="sc-dlfnbm hahudT"
+    >
+      <a
+        className="sc-hKgILt blFMmE"
+        href="href"
+      >
+        name
+      </a>
+    </span>
+  </div>
+</header>
+`;
