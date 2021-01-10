@@ -10,13 +10,14 @@ import BlogItemPostDate from '../blog-item-date'
 import BlogItemMetadataContainer from '../blog-item-metadata-container'
 
 const BlogItemContentHeader = ({ title, created, author }) => {
+  console.log(author)
   return (
     <StyledBlogItemContentHeader>
         <BlogItemTitle title={title}/>
         <BlogItemMetadataContainer>
             <BlogItemPostDate date={created}/>
             <ByLine/>
-            <BlogItemAuthor href={author.href} name={author.name}/>
+            <BlogItemAuthor href={`/authors/${author.id}`} name={author.name}/>
         </BlogItemMetadataContainer>
     </StyledBlogItemContentHeader>
   )

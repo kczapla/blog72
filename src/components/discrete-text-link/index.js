@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { StyledDiscreteTextLink } from './style'
 
 const DiscreteTextLink = ({ href, text }) => {
-  return (<StyledDiscreteTextLink href={href}>{text}</StyledDiscreteTextLink>)
+  return (<StyledDiscreteTextLink to={href}>{text}</StyledDiscreteTextLink>)
 }
 
 DiscreteTextLink.propTypes = {
