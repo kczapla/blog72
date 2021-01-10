@@ -3,7 +3,8 @@
 exports[`discrete text link renders correctly 1`] = `
 <a
   className="sc-bdfBwQ kOjnNd"
-  href="https://google.com"
+  href="/https://google.com"
+  onClick={[Function]}
 >
   tmp
 </a>

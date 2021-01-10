@@ -2,7 +2,7 @@
 
 exports[`discrete text link renders correctly 1`] = `
 <header
-  className="sc-jSgupP ilOTjx"
+  className="sc-eCssSg eAAXGY"
 >
   <h2
     className="sc-gsTCUz eZvnGp"
@@ -10,7 +10,7 @@ exports[`discrete text link renders correctly 1`] = `
     title
   </h2>
   <div
-    className="sc-eCssSg kCCemc"
+    className="sc-hKgILt flBTET"
   >
     <time
       dateTime={"2021-01-01T00:00:00.000Z"}
@@ -26,7 +26,6 @@ exports[`discrete text link renders correctly 1`] = `
       className="sc-dlfnbm hahudT"
     >
       <a
-        className="sc-hKgILt blFMmE"
         href="href"
       >
         name

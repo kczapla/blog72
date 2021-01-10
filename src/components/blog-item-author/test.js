@@ -7,6 +7,8 @@ import { render, screen } from '@testing-library/react'
 
 import BlogItemAuthor from './index'
 
+jest.mock('../discrete-text-link')
+
 describe('blog item author', () => {
   it('renders correctly', () => {
     const tree = renderer

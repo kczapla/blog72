@@ -3,6 +3,8 @@ import renderer from 'react-test-renderer'
 
 import BlogItemContentHeader from './index'
 
+jest.mock('../discrete-text-link')
+
 describe('blog item content header', () => {
   it('renders correctly', () => {
     const tree = renderer

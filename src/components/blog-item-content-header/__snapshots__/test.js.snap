@@ -10,7 +10,7 @@ exports[`blog item content header renders correctly 1`] = `
     tmp
   </h2>
   <div
-    className="sc-jSgupP gwYLfx"
+    className="sc-eCssSg kCCemc"
   >
     <time
       dateTime={"2020-01-01T00:00:00.000Z"}
@@ -26,7 +26,7 @@ exports[`blog item content header renders correctly 1`] = `
       className="sc-hKgILt glBrcB"
     >
       <a
-        className="sc-eCssSg cSNUOP"
+        href="/authors/undefined"
       />
     </span>
   </div>
