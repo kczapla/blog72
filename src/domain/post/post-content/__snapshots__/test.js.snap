@@ -1,7 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`discrete text link renders correctly 1`] = `
-<p>
-  content
-</p>
+<div
+  className="sc-gsTCUz hFiTXZ"
+>
+  <p>
+    content
+  </p>
+</div>
 `;
