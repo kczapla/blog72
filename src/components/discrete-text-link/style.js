@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-export const StyledDiscreteTextLink = styled.a`
+export const StyledDiscreteTextLink = styled(Link)`
   color: inherit;
 
   &:link {

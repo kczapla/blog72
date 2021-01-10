@@ -14,6 +14,9 @@ const Routes = () => {
         <Route exact={true} path='/posts/:postId'>
             <Post/>
         </Route>
+        <Route exact={true} path='/authors/:authorId'>
+          <div>{'author does not exist'}</div>
+        </Route>
     </Switch>
   )
 }
