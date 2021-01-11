@@ -1,12 +1,13 @@
 import React from 'react'
 
-import { StyledLoadingSpinner } from './style'
+import LoadingSpinnerContainer from './loading-spinner-contener'
+import LoadingSpinnerAnimation from './loading-spinner-animation'
 
 const LoadingSpinner = () => {
   return (
-    <StyledLoadingSpinner>
-      <div/><div/><div/><div/><div/><div/><div/><div/>
-    </StyledLoadingSpinner>
+    <LoadingSpinnerContainer>
+      <LoadingSpinnerAnimation/>
+    </LoadingSpinnerContainer>
   )
 }
 

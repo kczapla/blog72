@@ -9,7 +9,7 @@ const LoadingSpinnerKeyframes = keyframes`
   }
 `
 
-export const StyledLoadingSpinner = styled.div`
+export const StyledLoadingSpinnerAnimation = styled.div`
   display: inline-block;
   position: relative;
   width: 80px;

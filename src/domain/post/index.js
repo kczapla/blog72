@@ -1,5 +1,7 @@
 import React from 'react'
 
+import LoadingSpinner from '../../components/loading-spinner'
+
 import PostHeader from './post-header'
 import PostContent from './post-content'
 import PostContainer from './post-container'
@@ -17,7 +19,7 @@ const Post = () => {
   }
 
   if (isPostFetching) {
-    return <PostContainer>{'loading'}</PostContainer>
+    return <LoadingSpinner/>
   }
 
   return (
