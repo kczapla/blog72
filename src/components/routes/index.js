@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom'
 import Blog from '../blog'
 import Post from '../../domain/post'
 import BlogItemList from '../blog-item-list'
-import LoadingSpinner from '../loading-spinner'
 
 const Routes = () => {
   return (
