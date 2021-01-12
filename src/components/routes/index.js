@@ -18,9 +18,6 @@ const Routes = () => {
         <Route exact={true} path='/authors/:authorId'>
           <div>{'author does not exist'}</div>
         </Route>
-        <Route exact={true} path='/loading'>
-          <LoadingSpinner/>
-        </Route>
     </Switch>
   )
 }
