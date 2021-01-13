@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`error message renders correctly 1`] = `
+<section
+  className="sc-gsTCUz kSfVUQ"
+>
+  <span
+    className="sc-bdfBwQ gOhIwQ"
+  >
+    test error message
+  </span>
+</section>
+`;

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ErrorMessage from '../../components/error-message'
 import LoadingSpinner from '../../components/loading-spinner'
 
 import PostHeader from './post-header'
@@ -15,7 +16,7 @@ const Post = () => {
   const [post, isPostFetching, isFetchSuccessful] = useFetchPost(postId)
 
   if (isFetchSuccessful) {
-    return <PostContainer>{'error occured'}</PostContainer>
+    return <ErrorMessage text={'page not found'}/>
   }
 
   if (isPostFetching) {
