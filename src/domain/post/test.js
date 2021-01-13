@@ -48,7 +48,7 @@ describe('post', () => {
   it('does not render when fetched data is empty', async () => {
     axios.get.mockRejectedValue('error')
     renderWithRouter(<Post/>)
-    await expect(screen.findByText('error occured')).resolves.toBeTruthy()
+    await expect(screen.findByText('page not found')).resolves.toBeTruthy()
   })
   it('renders loading when fetching data', async () => {
     axios.get.mockResolvedValue({ data: { title: 'test title' } })
