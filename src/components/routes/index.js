@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Blog from '../blog'
 import Post from '../../domain/post'
+import ErrorMessage from '../error-message'
 import BlogItemList from '../blog-item-list'
 
 const Routes = () => {
@@ -15,7 +16,7 @@ const Routes = () => {
             <Post/>
         </Route>
         <Route exact={true} path='/authors/:authorId'>
-          <div>{'author does not exist'}</div>
+          <ErrorMessage text={'page not found'}/>
         </Route>
     </Switch>
   )
