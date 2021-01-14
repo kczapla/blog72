@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 import ByLine from '../../../components/by-line'
 import BlogItemTitle from '../../../components/blog-item-title'
 import BlogItemAuthor from '../../../components/blog-item-author'
-import BlogItemPostDate from '../../../components/blog-item-date'
 import BlogItemMetadataContainer from '../../../components/blog-item-metadata-container'
+
+import { DateInMMMDDCommaYYYYFormat } from '../../../services/format/date'
 
 import { StyledPostHeader } from './style'
 
@@ -14,7 +15,7 @@ const PostHeader = ({ post: { title, created, author } }) => {
       <StyledPostHeader>
         <BlogItemTitle title={title}/>
         <BlogItemMetadataContainer>
-            <BlogItemPostDate date={created}/>
+            <DateInMMMDDCommaYYYYFormat date={created}/>
             <ByLine/>
             <BlogItemAuthor name={author.name} href={author.href}/>
         </BlogItemMetadataContainer>
