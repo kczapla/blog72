@@ -29,4 +29,9 @@ describe('blog', () => {
     render(<Blog/>)
     await waitForElementToBeRemoved(() => screen.queryByText('loading'))
   })
+  it('renders an error message when fetching failed', async () => {
+    axios.get = jest.fn().mockRejectedValue('error')
+    render(<Blog/>)
+    await expect(screen.findByText('can not load posts')).resolves.toBeTruthy()
+  })
 })
